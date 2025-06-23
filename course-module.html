@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,10 +7,13 @@
     <style>
         :root {
             --primary: #4a6fa5;
+            --primary-light: #6d8cc2;
             --secondary: #ff9f1c;
             --light: #f8f9fa;
+            --light-blue: #e3f2fd;
+            --medium-blue: #bbdefb;
             --dark: #212529;
-            --success: #28a745;
+            --white: #ffffff;
         }
 
         body {
@@ -30,30 +32,25 @@
         }
 
         header {
-            background-color: var(--primary);
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
             color: white;
-            padding: 30px 0;
+            padding: 20px 0;
             text-align: center;
-            margin-bottom: 30px;
-            border-radius: 0 0 10px 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
 
         h1 {
             margin: 0;
-            font-size: 2.5rem;
+            font-size: 2rem;
+            font-weight: 600;
         }
 
         h2 {
             color: var(--primary);
-            border-bottom: 2px solid var(--secondary);
-            padding-bottom: 10px;
-            margin-top: 40px;
-        }
-
-        h3 {
-            color: var(--primary);
-            margin-top: 25px;
+            text-align: center;
+            margin: 30px 0 20px;
+            font-weight: 500;
         }
 
         .course-table {
@@ -67,16 +64,17 @@
         }
 
         .course-table th {
-            background-color: var(--primary);
+            background: linear-gradient(to right, var(--primary), var(--primary-light));
             color: white;
-            padding: 15px;
+            padding: 12px 15px;
             text-align: left;
+            font-weight: 500;
         }
 
         .course-table td {
-            padding: 15px;
-            border-bottom: 1px solid #eee;
-            vertical-align: top;
+            padding: 10px 15px;
+            border-bottom: 1px solid #e0e0e0;
+            vertical-align: middle;
         }
 
         .course-table tr:last-child td {
@@ -87,22 +85,50 @@
             background-color: var(--light);
         }
 
+        .module-number {
+            text-align: center;
+            vertical-align: middle;
+            font-weight: bold;
+            background-color: var(--medium-blue);
+            color: var(--dark);
+        }
+
+        .module-title {
+            vertical-align: middle;
+            font-weight: bold;
+            background-color: var(--light-blue);
+            color: var(--dark);
+        }
+
+        .center-content {
+            text-align: center;
+        }
+
+        .project-container {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            align-items: flex-start;
+        }
+
         .project-btn {
             display: inline-block;
-            background-color: var(--primary);
+            background: linear-gradient(to right, var(--primary), var(--primary-light));
             color: white;
             padding: 8px 16px;
             border: none;
             border-radius: 4px;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: background-color 0.3s;
-            margin-bottom: 10px;
+            font-size: 0.9rem;
             text-decoration: none;
+            text-align: center;
+            min-width: 120px;
+            transition: all 0.3s ease;
         }
 
         .project-btn:hover {
-            background-color: #3a5a8c;
+            background: linear-gradient(to right, var(--primary-light), var(--primary));
+            transform: translateY(-2px);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
 
         @media (max-width: 768px) {
@@ -111,257 +137,198 @@
             }
 
             h1 {
-                font-size: 2rem;
+                font-size: 1.5rem;
             }
 
             .course-table {
                 display: block;
                 overflow-x: auto;
+                border-radius: 0;
             }
 
-            .course-table th,
+            .course-table th, 
             .course-table td {
-                padding: 10px;
-                white-space: nowrap;
+                padding: 8px 10px;
+                min-width: 120px;
+                font-size: 0.9rem;
+            }
+            
+            .project-btn {
+                padding: 6px 12px;
+                font-size: 0.8rem;
+                min-width: 100px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .course-table th, 
+            .course-table td {
+                padding: 6px 8px;
+                font-size: 0.85rem;
+            }
+            
+            .project-btn {
+                padding: 5px 8px;
+                min-width: 80px;
             }
         }
     </style>
 </head>
-
 <body>
     <header>
         <div class="container">
-            <h1>Scratch Programming Course Curriculum</h1>
-            <p>Comprehensive guide to teaching computational thinking through creative projects</p>
+            <h1>Scratch Programming Course Module</h1>
         </div>
     </header>
 
     <div class="container">
-        <h5 style="text-align: center;">*Module 6 & 7 PPT Only Completed*</h5>
         <h2>Course Modules</h2>
 
-        <!-- Module 1 -->
-        <h3>Module 1: Introduction to Scratch</h3>
-        <p><strong>Topics Covered:</strong> Scratch Installation, Interface Familiarization, Motion Blocks, Looks and
-            Sound Blocks</p>
-
         <table class="course-table">
             <thead>
                 <tr>
-                    <th>Project</th>
-                    <th>Learning Goal</th>
+                    <th width="10%">Module</th>
+                    <th width="25%">Topics Covered</th>
+                    <th width="35%">Learnings</th>
+                    <th width="30%">Projects PPT</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td><a href="#" class="project-btn">Hello World (PPT)</a></td>
-                    <td>Familiarize students with Scratch interface, sprites, backdrops, and blocks.</td>
+                <!-- Module 1 -->
+               
+               
+                 <tr>
+                    <td class="module-number" rowspan="3">1</td>
+                    <td class="module-title" rowspan="3">Introduction to Scratch</td>
+                    <td>Introduction to Scratch</td>
+                    <td class="project-container"><a href="./ppt_module_1.html" class="project-btn">Hello World</a></td>
                 </tr>
                 <tr>
-                    <td><a href="#" class="project-btn">Sprite Walks Across the Screen (PPT)</a></td>
-                    <td>Learn to make sprites move in different directions.</td>
+                    <td>Motion Blocks</td>
+                    <td class="project-container"><a href="./ppt_module_1.html" class="project-btn">Sprite Walks</a></td>
                 </tr>
                 <tr>
-                    <td><a href="#" class="project-btn">Dancing Sprite (PPT)</a></td>
-                    <td>Add sounds and change sprite costumes.</td>
+                    <td>Looks and Sound Blocks</td>
+                    <td class="project-container"><a href="./ppt_module_1.html" class="project-btn">Dancing Sprite</a></td>
                 </tr>
-            </tbody>
-        </table>
+                
 
-        <!-- Module 2 -->
-        <h3>Module 2: Events and Sequencing</h3>
-        <p><strong>Topics Covered:</strong> Using Events, Sequencing Actions, Introducing Loops</p>
+                <!-- Module 2 -->
+                <tr>
+                    <td class="module-number" rowspan="3">2</td>
+                    <td class="module-title" rowspan="3">Events and Sequencing</td>
+                    <td>Using Events</td>
+                    <td class="project-container"><a href="./ppt_module_2.html" class="project-btn">Sprite Reacts</a></td>
+                </tr>
+                <tr>
+                    <td>Sequencing Actions</td>
+                    <td class="project-container"><a href="./ppt_module_2.html" class="project-btn">Dance Routine</a></td>
+                </tr>
+                <tr>
+                    <td>Introducing Loops</td>
+                    <td class="project-container"><a href="./ppt_module_2.html" class="project-btn">Bouncing Ball</a></td>
+                </tr>
 
-        <table class="course-table">
-            <thead>
+                <!-- Module 3 -->
                 <tr>
-                    <th>Project</th>
-                    <th>Learning Goal</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><a href="#" class="project-btn">Sprite Reacts to Mouse Clicks (PPT)</a></td>
-                    <td>Learn how to trigger actions using events.</td>
+                    <td class="module-number" rowspan="2">3</td>
+                    <td class="module-title" rowspan="2">Animations and Storytelling</td>
+                    <td>Simple Animations</td>
+                    <td class="project-container"><a href="./ppt_module_3.html" class="project-btn">School Story</a></td>
                 </tr>
                 <tr>
-                    <td><a href="#" class="project-btn">Dance Routine (PPT)</a></td>
-                    <td>Understand how to sequence multiple actions.</td>
+                    <td>Broadcast Messages</td>
+                    <td class="project-container"><a href="./ppt_module_3.html" class="project-btn">Broadcasts</a></td>
                 </tr>
-                <tr>
-                    <td><a href="#" class="project-btn">Animate a Bouncing Ball (PPT)</a></td>
-                    <td>Understand loops and repetition in coding.</td>
-                </tr>
-            </tbody>
-        </table>
 
-        <!-- Module 3 -->
-        <h3>Module 3: Animations and Storytelling</h3>
-        <p><strong>Topics Covered:</strong> Simple Animations, Broadcast Messages</p>
+                <!-- Module 4 -->
+                <tr>
+                    <td class="module-number" rowspan="3">4</td>
+                    <td class="module-title" rowspan="3">Variables and Conditions</td>
+                    <td>Introduction to Variables</td>
+                    <td class="project-container"><a href="./ppt_module_4.html" class="project-btn">Number Count</a></td>
+                </tr>
+                <tr>
+                    <td>Introduction to Conditions</td>
+                    <td class="project-container"><a href="./ppt_module_4.html" class="project-btn">Odd/Even Checker</a></td>
+                </tr>
+                <tr>
+                    <td>Operators</td>
+                    <td class="project-container"><a href="./ppt_module_4.html" class="project-btn">Multiplication Table</a></td>
+                </tr>
 
-        <table class="course-table">
-            <thead>
+                <!-- Module 5 -->
                 <tr>
-                    <th>Project</th>
-                    <th>Learning Goal</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><a href="#" class="project-btn">Create a School Story Scene (PPT)</a></td>
-                    <td>Animate multiple sprites to tell a story.</td>
+                    <td class="module-number" rowspan="3">5</td>
+                    <td class="module-title" rowspan="3">Decision Making and Game Design</td>
+                    <td>Advanced Conditions</td>
+                    <td class="project-container">
+                        <a href="./ppt_grade_system.html" class="project-btn">Grade System</a>
+                        <a href="./ppt_banking_system.html" class="project-btn">Banking Project</a>
+                    </td>
                 </tr>
                 <tr>
-                    <td><a href="#" class="project-btn">Broadcast Messages (PPT)</a></td>
-                    <td>Learn how sprites communicate via broadcasts.</td>
+                    <td>Game Mechanics</td>
+                    <td class="project-container"><a href="./ppt_catch_game.html" class="project-btn">Catching Game</a></td>
                 </tr>
-            </tbody>
-        </table>
+                <tr>
+                    <td>Multi-Level Games</td>
+                    <td class="project-container"><a href="./ppt_maze_game.html" class="project-btn">Maze Master</a></td>
+                </tr>
 
-        <!-- Module 4 -->
-        <h3>Module 4: Variables and Conditions</h3>
-        <p><strong>Topics Covered:</strong> Introduction to Variables, Operators, Introduction to Conditions</p>
+                <!-- Module 6 -->
+                <tr>
+                    <td class="module-number" rowspan="3">6</td>
+                    <td class="module-title" rowspan="3">Variables, Lists & Data</td>
+                    <td>Working with Lists</td>
+                    <td class="project-container"><a href="./ppt_quiz.html" class="project-btn">Quiz Game</a></td>
+                </tr>
+                <tr>
+                    <td>Unit Converter</td>
+                    <td class="project-container"><a href="./ppt_temperature_converter.html" class="project-btn">Temp Converter</a></td>
+                </tr>
+                <tr>
+                    <td>Variables and Logics</td>
+                    <td class="project-container"><a href="./ppt_calculator.html" class="project-btn">Calculator App</a></td>
+                </tr>
 
-        <table class="course-table">
-            <thead>
+                <!-- Module 7 -->
                 <tr>
-                    <th>Project</th>
-                    <th>Learning Goal</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><a href="#" class="project-btn">Frog Game (PPT)</a></td>
-                    <td>Learn about variables and tracking values like scores.</td>
+                    <td class="module-number" rowspan="4">7</td>
+                    <td class="module-title" rowspan="4">Advanced Concepts</td>
+                    <td>Custom Blocks</td>
+                    <td class="project-container"><a href="./ppt_electrical_circuit.html" class="project-btn">Circuit</a></td>
                 </tr>
                 <tr>
-                    <td><a href="#" class="project-btn">Create a Math Quiz Game (PPT)</a></td>
-                    <td>Understand arithmetic and comparison operators.</td>
+                    <td>Keyboard Access</td>
+                    <td class="project-container"><a href="./ppt_typing_practice_game.html" class="project-btn">Typing Game</a></td>
                 </tr>
                 <tr>
-                    <td><a href="#" class="project-btn">Even or Odd Checker (PPT)</a></td>
-                    <td>Use "if" and "if-else" statements for logic.</td>
+                    <td>Add & Remove Blocks</td>
+                    <td class="project-container"><a href="./ppt_to_do_list.html" class="project-btn">To-Do List</a></td>
                 </tr>
-            </tbody>
-        </table>
+                <tr>
+                    <td>Extension</td>
+                    <td class="project-container"><a href="./ppt_translator.html" class="project-btn">Translator</a></td>
+                </tr>
 
-        <!-- Module 5 -->
-        <h3>Module 5: Decision Making and Game Design</h3>
-        <p><strong>Topics Covered:</strong> Advanced Conditions, Game Mechanics, Multi-Level Games</p>
-
-        <table class="course-table">
-            <thead>
+                <!-- Module 8 -->
                 <tr>
-                    <th>Project</th>
-                    <th>Learning Goal</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><a href="#" class="project-btn">Student Grade System (PPT)</a></td>
-                    <td>Combine multiple conditions for complex logic.</td>
+                    <td class="module-number" rowspan="3">8</td>
+                    <td class="module-title" rowspan="3">Final Project</td>
+                    <td>Desktop UI</td>
+                    <td class="project-container"><a href="#" class="project-btn">Scratch OS</a></td>
                 </tr>
                 <tr>
-                    <td><a href="#" class="project-btn">Banking Project (PPT)</a></td>
-                    <td>Implement a simple banking system with deposits/withdrawals.</td>
+                    <td>2D Platformer Engine</td>
+                    <td class="project-container"><a href="#" class="project-btn">Jump Quest</a></td>
                 </tr>
                 <tr>
-                    <td><a href="#" class="project-btn">Catching Game (PPT)</a></td>
-                    <td>Use variables for time and levels in a game.</td>
-                </tr>
-                <tr>
-                    <td><a href="#" class="project-btn">Maze Master (PPT)</a></td>
-                    <td>Navigate a series of mazes; each level adds moving walls or traps.</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <!-- Module 6 -->
-        <h3>Module 6: Variables, Lists & Data</h3>
-        <p><strong>Topics Covered:</strong> Working with Lists, Variables and Logics, Unit Converter</p>
-
-        <table class="course-table">
-            <thead>
-                <tr>
-                    <th>Project</th>
-                    <th>Learning Goal</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><a href="quiz.html" class="project-btn">Build a Quiz Game (PPT)</a></td>
-                    <td>Store and use multiple values with lists.</td>
-                </tr>
-                <tr>
-                    <td><a href="calculator.html" class="project-btn">Create a Calculator App (PPT)</a></td>
-                    <td>Use variables, Operators, Logics.</td>
-                </tr>
-                <tr>
-                    <td><a href=temperature_converter.html" class="project-btn">Temperature Converter (PPT)</a></td>
-                    <td>Convert units like °C→°F with input blocks and math.</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <!-- Module 7 -->
-        <h3>Module 7: Advanced Concepts</h3>
-        <p><strong>Topics Covered:</strong> Custom Blocks, Keyboard Access, Add & Remove Blocks, Extension</p>
-
-        <table class="course-table">
-            <thead>
-                <tr>
-                    <th>Project</th>
-                    <th>Learning Goal</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><a href="electrical_circuit.html" class="project-btn">Electrical Circuit (PPT)</a></td>
-                    <td>Create reusable blocks for efficiency (Touching Color).</td>
-                </tr>
-                <tr>
-                    <td><a href="typing_practice_game.html" class="project-btn">Typing Practice Game (PPT)</a></td>
-                    <td>Improve typing speed with sprite feedback.</td>
-                </tr>
-                <tr>
-                    <td><a href="to_do_list.html" class="project-btn">To-Do List App (PPT)</a></td>
-                    <td>Add/remove tasks using list blocks.</td>
-                </tr>
-                <tr>
-                    <td><a href="translator.html" class="project-btn">Language Translator (PPT)</a></td>
-                    <td>Use lists to translate words from one language to another.</td>
-                </tr>
-            </tbody>
-        </table>
-
-
-        <!-- Module 8 -->
-        <h3>Module 8: Final Project</h3>
-        <p><strong>Topics Covered:</strong> Desktop UI, 2D Platformer Engine, Artificial Intelligence</p>
-
-        <table class="course-table">
-            <thead>
-                <tr>
-                    <th>Project</th>
-                    <th>Learning Goal</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><a href="#" class="project-btn">Scratch OS (PPT)</a></td>
-                    <td>Multiple screens, draggable windows, apps.</td>
-                </tr>
-                <tr>
-                    <td><a href="#" class="project-btn">Jump Quest (PPT)</a></td>
-                    <td>Gravity simulation, jump arc, collision detection, tile-based level system.</td>
-                </tr>
-                <tr>
-                    <td><a href="#" class="project-btn">Chess Game with AI Opponent (PPT)</a></td>
-                    <td>Chess rules implementation: movement, capture, turn-switching.</td>
+                    <td>Artificial Intelligence</td>
+                    <td class="project-container"><a href="#" class="project-btn">Chess Game</a></td>
                 </tr>
             </tbody>
         </table>
     </div>
 </body>
-
 </html>
