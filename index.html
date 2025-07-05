@@ -111,5 +111,20 @@
            
         </div>
     </div>
+
+
+
+   <script>
+  window.onload = function checkPassword() {
+    const encoded = ["cWJlZWFjYWRlbXk="]; 
+    const input = prompt("Enter password:");
+    const encodedInput = btoa(input);
+    if (!encoded.includes(encodedInput)) {
+      alert("Access Denied");
+      window.location.href = "about:blank"; 
+    }
+  };
+</script>
+
 </body>
 </html>
